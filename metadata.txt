@@ -16,8 +16,8 @@ email=gihu.rhn@porcupinefactory.org
 
 about=This plugin makes it possible to save the styles for all layers in order t load them later in a different project, preserving ordering.
 
-tracker=not yet
-repository=not yet
+tracker=https://github.com/rhn/StyleManager/issues
+repository=https://github.com/rhn/StyleManager
 # End of mandatory metadata
 
 # Recommended items:
@@ -28,7 +28,7 @@ repository=not yet
 # Tags are comma separated with spaces allowed
 tags=export, import, labeling, layers, style, vector
 
-homepage=not yet
+homepage=https://github.com/rhn/StyleManager
 category=Plugins
 icon=icon.png
 # experimental flag
