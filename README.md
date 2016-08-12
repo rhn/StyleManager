@@ -22,3 +22,43 @@ Importing
 The plugin requires you to have 3 layers in your project (visible or not), called `points`, `lines` and `multipolygons`. These layers will contain data for imported styles.
 
 After loading a `styles.json` file, the base layers will be duplicated and the new styles applied.
+
+Installation
+------------
+
+### Requirements
+
+* `pyrcc4` (can be found in PyQt4 devel packages)
+* `sphinx-build` for docs and deployment (can be found in python-sphinx packages)
+
+Building
+--------
+
+To build the plugin, `cd` to the plugin directory and execute:
+
+```
+make
+```
+
+To deploy it locally to your QGIS installation:
+
+```
+make deploy
+```
+
+Make sure that you have enabled experimental plugins in QGIS and it will show up on your plugin list.
+
+Tests
+-----
+
+To do automated tests:
+
+```
+make test
+```
+
+TODO
+----
+
+* Implement/fix dialog tests
+* Create documentation
