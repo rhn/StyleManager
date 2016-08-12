@@ -227,7 +227,6 @@ class StyleManager:
         """
 
         icon = QIcon(icon_path)
-        print(icon, icon_path)
         action = QAction(icon, text, parent)
         action.triggered.connect(callback)
         action.setEnabled(enabled_flag)
@@ -292,9 +291,6 @@ class StyleManager:
             return
         if os.path.basename(path) == META_FILE_NAME:
             path = os.path.dirname(path)
-
-        if os.path.exists(os.path.join(path, META_FILE_NAME)):
-            print("FIXME: overwriting")
 
         persistence.export(self.iface, path)
 
