@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/plugins/StyleManager" >
+        <file>icon.png</file>
+        <file>icon_save.png</file>
+    </qresource>
+</RCC>
