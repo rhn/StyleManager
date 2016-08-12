@@ -30,7 +30,8 @@ import os.path
 import os
 import errno
 import json
-from qgis.core import QGis
+from qgis.core import QGis, QgsMapLayer
+
 
 def try_mkdir(path):
     try:
@@ -40,10 +41,19 @@ def try_mkdir(path):
             return
         raise
 
+
 def geom_type_to_name(geom_type):
     return {QGis.Point: 'Point',
             QGis.Line: 'Line',
             QGis.Polygon: 'Polygon'}[geom_type]
+
+
+def get_layer_kind(layer):
+    if layer.type() == QgsMapLayer.RasterLayer:
+        return 'Raster'
+    elif layer.type() == QgsMapLayer.VectorLayer:
+        return geom_type_to_name(layer.geometryType())
+    return 'Unknown'
 
 
 def LayerMeta(name, type_, path):
@@ -96,12 +106,12 @@ class PersistenceFunctions:
                 continue
 
             raw_name = layer.name()
-            geom_type_name = geom_type_to_name(layer.geometryType())
+            layer_type = get_layer_kind(layer)
             name = raw_name.split('_', 1)[0]
             
-            order.append(LayerMeta(raw_name, geom_type_name, (name, geom_type_name)))
+            order.append(LayerMeta(raw_name, layer_type, (name, layer_type)))
             namedir = dirs_to_layers.setdefault(name, {})
-            namedir.setdefault(geom_type_name, layer)
+            namedir.setdefault(layer_type, layer)
         
         try:
             try_mkdir(path)

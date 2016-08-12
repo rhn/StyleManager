@@ -62,3 +62,5 @@ TODO
 
 * Implement/fix dialog tests
 * Create documentation
+* Load raster styles
+* Handle errors
