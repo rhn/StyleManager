@@ -26,7 +26,7 @@ repository=https://github.com/rhn/StyleManager
 # changelog=
 
 # Tags are comma separated with spaces allowed
-tags=export, import, labeling, layers, style, vector
+tags=export, import, labeling, layers, style, vector, raster
 
 homepage=https://github.com/rhn/StyleManager
 category=Plugins
